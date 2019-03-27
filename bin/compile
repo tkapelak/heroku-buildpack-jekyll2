@@ -9,8 +9,8 @@ export GEM_HOME=$bp_dir/vendor/gems
 export GEM_PATH=$bp_dir/vendor/gems
 export PATH=$PATH:$bp_dir/vendor/gems/bin
 
-gem update --system
-gem install bundler
+BUNDLER_VERSION=`cat Gemfile.lock|grep 'BUNDLED WITH' -A 1|grep -v 'BUNDLED WITH'| sed -e 's/^  *//'`
+gem install bundler -v $BUNDLER_VERSION
 bundle install --path $cache_dir
 
 bundle exec $bp_dir/scripts/precompile
