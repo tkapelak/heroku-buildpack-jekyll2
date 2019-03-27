@@ -18,6 +18,7 @@ echo "pwd: $(pwd)"
 echo "build_dir: $build_dir"
 echo "cache_dir: $cache_dir"
 echo `ls -1`
+echo `ls -1 /app`
 
 gem install bundler -v $BUNDLER_VERSION
 bundle install --path $cache_dir
