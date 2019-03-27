@@ -9,6 +9,7 @@ export GEM_HOME=$bp_dir/vendor/gems
 export GEM_PATH=$bp_dir/vendor/gems
 export PATH=$PATH:$bp_dir/vendor/gems/bin
 
+gem update --system
 gem install bundler
 bundle install --path $cache_dir
 
