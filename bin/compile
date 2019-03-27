@@ -10,6 +10,12 @@ export GEM_PATH=$bp_dir/vendor/gems
 export PATH=$PATH:$bp_dir/vendor/gems/bin
 
 BUNDLER_VERSION=`cat Gemfile.lock|grep 'BUNDLED WITH' -A 1|grep -v 'BUNDLED WITH'| sed -e 's/^  *//'`
+
+echo "Trying to install bundler version $BUNDLER_VERSION"
+echo "bp_dir: $bp_dir"
+echo "GEM_PATH: $GEM_PATH"
+echo `ls -l $GEM_PATH|grep bundler`
+
 gem install bundler -v $BUNDLER_VERSION
 bundle install --path $cache_dir
 
