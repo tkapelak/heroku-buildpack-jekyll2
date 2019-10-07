@@ -11,7 +11,7 @@ export PATH=$PATH:$bp_dir/vendor/gems/bin
 
 BUNDLER_VERSION=`cat /app/Gemfile.lock|grep 'BUNDLED WITH' -A 1|grep -v 'BUNDLED WITH'| sed -e 's/^  *//'`
 
-echo "Trying to install bundler version $BUNDLER_VERSION"
+echo "!!! Trying to install bundler version $BUNDLER_VERSION"
 echo "bp_dir: $bp_dir"
 echo "GEM_PATH: $GEM_PATH"
 echo "pwd: $(pwd)"
