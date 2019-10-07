@@ -9,8 +9,10 @@ export GEM_HOME=$bp_dir/vendor/gems
 export GEM_PATH=$bp_dir/vendor/gems
 export PATH=$PATH:$bp_dir/vendor/gems/bin
 
-BUNDLER_VERSION=`cat /app/Gemfile.lock|grep 'BUNDLED WITH' -A 1|grep -v 'BUNDLED WITH'| sed -e 's/^  *//'`
+echo ``cat /app/Gemfile.lock`
 
+BUNDLER_VERSION=`cat /app/Gemfile.lock|grep 'BUNDLED WITH' -A 1|grep -v 'BUNDLED WITH'| sed -e 's/^  *//'`
+BUNDLER_VERSION="2.1.0.pre.2"
 echo "!!! Trying to install bundler version $BUNDLER_VERSION"
 echo "bp_dir: $bp_dir"
 echo "GEM_PATH: $GEM_PATH"
